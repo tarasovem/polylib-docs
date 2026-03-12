@@ -76,6 +76,6 @@ customElements.define("my-counter", MyCounter);
 
 ## Следующие шаги
 
-- [Что такое Polylib](../components/what-is-polylib.md)
+- [Что такое Polylib](../README.md)
 - [Свойства и шаблоны](../components/properties-templates.md)
 - [Контекст и события](../components/context-events.md)

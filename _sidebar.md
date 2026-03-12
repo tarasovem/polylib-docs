@@ -1,9 +1,8 @@
 * Введение
-  * [🚧 Что такое Polylib](README.md)
+  * [Что такое Polylib](README.md)
   * [🚧 Быстрый старт](getting-started/quick-start.md)
 
 * Компоненты
-  * [🚧 Что такое Polylib](components/what-is-polylib.md)
   * [🚧 Идеология](components/ideology.md)
   * [🚧 Свойства и шаблоны](components/properties-templates.md)
   * [🚧 Стилизация](components/styling.md)
