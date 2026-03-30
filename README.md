@@ -78,7 +78,7 @@ customElements.define("hello-card", HelloCard);
 
 ### Полный путь
 
-1. [Быстрый старт](getting-started/quick-start.md)
+1. [Свойства и шаблоны](components/properties-templates.md)
 2. [Шаблоны](templates/data-binding.md)
 3. [Работа с данными](managing-data/data-manipulation.md)
 4. [Формы](forms/collections.md)
