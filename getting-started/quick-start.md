@@ -15,16 +15,10 @@
 
 ## Вариант запуска
 
-Основной сценарий этой документации - без сборки, через CDN-импорт:
+Эта документация использует сценарий без сборки, через CDN-импорт:
 
 ```js
 import { PlElement, html, css } from "https://esm.sh/polylib";
-```
-
-Для проектов со сборкой можно использовать пакетный импорт:
-
-```js
-import { PlElement, html, css } from "polylib";
 ```
 
 ## Шаг 1. Создайте компонент
@@ -89,7 +83,7 @@ customElements.define("my-counter", MyCounter);
 
 ## Типичные ошибки на старте
 
-- неверный путь импорта (`https://esm.sh/polylib` vs `polylib`);
+- неверный путь импорта (`https://esm.sh/polylib`);
 - забыли `customElements.define(...)`;
 - имя тега в HTML не совпадает с зарегистрированным (`my-counter`).
 
