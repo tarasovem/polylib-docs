@@ -1,6 +1,6 @@
 * Введение
   * [Что такое Polylib](README.md)
-  * [🚧 Быстрый старт](getting-started/quick-start.md)
+  * [Быстрый старт](getting-started/quick-start.md)
 
 * Компоненты
   * [🚧 Идеология](components/ideology.md)

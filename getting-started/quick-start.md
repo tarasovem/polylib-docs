@@ -1,24 +1,45 @@
 # Быстрый старт
 
-Эта страница помогает получить первый рабочий результат с Polylib за 10-15 минут.
+За 5-10 минут вы соберете первый компонент на Polylib и проверите, что реактивность и стили работают.
 
-## 1) Подготовка окружения
+## Что вы получите
 
-Требования:
+- зарегистрированный `Custom Element`;
+- реактивное свойство `count` с обновлением по клику;
+- стили компонента через `static css`.
+
+## Требования
 
 - современный браузер с поддержкой Web Components;
 - обычный `index.html` и ES modules.
 
-## 2) Создайте файл компонента
+## Вариант запуска
 
-Создайте `my-counter.js`:
+Основной сценарий этой документации - без сборки, через CDN-импорт:
+
+```js
+import { PlElement, html, css } from "https://esm.sh/polylib";
+```
+
+Для проектов со сборкой можно использовать пакетный импорт:
+
+```js
+import { PlElement, html, css } from "polylib";
+```
+
+## Шаг 1. Создайте компонент
+
+Создайте файл `my-counter.js`:
 
 ```js
 import { PlElement, html, css } from "https://esm.sh/polylib";
 
 export class MyCounter extends PlElement {
   static properties = {
-    count: { type: Number },
+    count: {
+      type: Number,
+      value: 0,
+    },
   };
 
   static css = css`
@@ -30,27 +51,20 @@ export class MyCounter extends PlElement {
     }
   `;
 
-  constructor() {
-    super();
-    this.count = 0;
-  }
-
   onIncrement() {
     this.set("count", this.count + 1);
   }
 
-  render() {
-    return html`
-      <button on-click="onIncrement">+</button>
-      <span>Count: [[count]]</span>
-    `;
-  }
+  static template = html`
+    <button on-click="onIncrement">+</button>
+    <span>Count: [[count]]</span>
+  `;
 }
 
 customElements.define("my-counter", MyCounter);
 ```
 
-## 3) Подключите компонент на странице
+## Шаг 2. Подключите компонент на странице
 
 ```html
 <!doctype html>
@@ -62,17 +76,22 @@ customElements.define("my-counter", MyCounter);
   </head>
   <body>
     <my-counter></my-counter>
-
     <script type="module" src="./my-counter.js"></script>
   </body>
 </html>
 ```
 
-## 4) Что проверить после запуска
+## Шаг 3. Проверьте результат
 
-- компонент регистрируется без ошибок;
-- кнопка обновляет значение счетчика;
-- стили из `static css` применяются к компоненту.
+- компонент рендерится без ошибок в консоли;
+- по клику на `+` значение `count` увеличивается;
+- стили из `static css` применяются к кнопке и тексту.
+
+## Типичные ошибки на старте
+
+- неверный путь импорта (`https://esm.sh/polylib` vs `polylib`);
+- забыли `customElements.define(...)`;
+- имя тега в HTML не совпадает с зарегистрированным (`my-counter`).
 
 ## Следующие шаги
 
